@@ -21,7 +21,7 @@ const CreatePost = () => {
   const [loading, setLoading] = useState(false);
 
   const generateImage = () => {
-
+    
   }
 
   const handleSubmit = () => {
@@ -29,11 +29,12 @@ const CreatePost = () => {
   }
 
   const handleChange = (e) => {
-
+    setForm({...form, [e.target.name]: e.target.value})
   }
 
   const handleSurpriseMe = () => {
-
+    const randomPrompt = getRandomPrompt(form.prompt);
+    setForm({...form, prompt: randomPrompt})
   }
 
 
@@ -59,7 +60,7 @@ const CreatePost = () => {
             labelName="Prompt"
             type='text'
             name='prompt'
-            placeholder='Dracula walking down the street of New York City in the 1920s, black and white photography'
+            placeholder='Dracula walking down the street of New York City in the 1970s, black and white photography'
             value={form.prompt}
             handleChange={handleChange}
             isSurpriseMe
